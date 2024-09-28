@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/main_screen.dart';
 import 'package:quiz_app/quiz_test.dart';
 
-
-
-
 class Quiz extends StatefulWidget{
 
   const Quiz({super.key});
@@ -23,11 +20,11 @@ class _QuizState extends State<Quiz>{
     activestate=MainScreen(switchactive);
     super.initState();
   }
-void switchactive (){
-  setState(() {
-    activestate=const QuizTest();
-  });
-}
+  void switchactive (){
+    setState(() {
+      activestate=const QuizTest();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

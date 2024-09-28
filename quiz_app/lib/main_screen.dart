@@ -23,7 +23,7 @@ class MainScreen extends StatelessWidget {
           const SizedBox(height: 20),
           OutlinedButton.icon(
             onPressed: switchactive,
-            icon: const Icon(Icons.arrow_back_sharp),
+            icon: const Icon(Icons.arrow_right),
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             label: const Text(
               'Start Quiz',

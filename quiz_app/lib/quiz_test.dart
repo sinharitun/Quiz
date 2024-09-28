@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/buttonstyle.dart';
+import 'package:quiz_app/data/question.dart';
 
 class QuizTest extends StatefulWidget {
   const QuizTest({super.key});
@@ -9,34 +11,40 @@ class QuizTest extends StatefulWidget {
 }
 
 class _QuizTestState extends State<QuizTest> {
+  
+  
   @override
   Widget build(BuildContext context) {
+    
+    final currentQuestion=questions[0];
     return SizedBox(
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text("question",style: TextStyle(color: Colors.white,fontSize: 28),),
+          Text(
+            currentQuestion.text,
+            style: const TextStyle(color: Colors.white, fontSize: 28),
+          ),
           const SizedBox(
             height: 20,
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('answer1'),
+          Buttonstyle(
+            answertext: currentQuestion.answer[0],
+            ontap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('answer2'),
+          Buttonstyle(
+            answertext: currentQuestion.answer[1],
+            ontap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('answer3'),
+          Buttonstyle(
+            answertext: currentQuestion.answer[2],
+            ontap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('answer4'),
+          Buttonstyle(
+            answertext: currentQuestion.answer[3],
+            ontap: () {},
           ),
-      
         ],
       ),
     );
