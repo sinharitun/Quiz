@@ -31,7 +31,7 @@ const questions = [
       'StatelessWidget',
       'StatefulWidget',
       'Both are equally good',
-      'None of the above',
+      //'None of the above',
     ],
   ),
   QuizQuestion(
@@ -40,7 +40,7 @@ const questions = [
       'The UI is not updated',
       'The UI is updated',
       'The closest StatefulWidget is updated',
-      'Any nested StatefulWidgets are updated',
+      //'Any nested StatefulWidgets are updated',
     ],
   ),
   QuizQuestion(
