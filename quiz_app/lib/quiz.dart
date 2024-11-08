@@ -30,8 +30,8 @@ class _QuizState extends State<Quiz> {
 
     if(selectAnswer.length == questions.length){
       setState(() {
-        selectAnswer = [];
-        activestate = result_screen();
+        // selectAnswer=[];
+        activestate = result_screen(choosenAnswer: selectAnswer,);
       });
     }
   }
@@ -47,6 +47,7 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 28, 21, 233),
