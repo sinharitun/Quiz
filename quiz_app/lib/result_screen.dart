@@ -7,9 +7,13 @@ class result_screen extends StatelessWidget {
   result_screen({
     super.key,
     required this.choosenAnswer,
+    required this.restartIt,
+    
   });
-
+  
+  final void Function() restartIt;
   final List<String> choosenAnswer;
+  
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -61,7 +65,7 @@ class result_screen extends StatelessWidget {
               icon: const Icon(Icons.restart_alt_rounded),
               label: Text('Restart Quiz',style: TextStyle(fontSize: 18),),
               style: TextButton.styleFrom(foregroundColor: Color.fromARGB(255, 246, 200, 242)),
-              onPressed: () {},
+              onPressed: restartIt,
               
             )
           ],

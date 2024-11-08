@@ -6,36 +6,43 @@ class QuestionSummary extends StatelessWidget {
   final List<Map<String, Object>> summaryData;
   @override
   Widget build(BuildContext context) {
+    
     return SizedBox(
       height: 400,
       child: SingleChildScrollView(
         child: Column(
+          
           children: summaryData.map(
             (data) {
+              final isCorrect= data['userAnser'] == data['correctAnswer'];
               return Row(
-                
                 children: [
                   Container(
-                    alignment: Alignment.topLeft,
+                      //alignment: Alignment.topLeft,
                       margin: EdgeInsets.only(bottom: 10),
                       padding: EdgeInsets.all(10),
                       width: 37,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(200),
-                          color: const Color.fromARGB(255, 247, 103, 250)),
+                        borderRadius: BorderRadius.circular(100),
+                        color: isCorrect
+                            ? const Color.fromARGB(255, 247, 103, 250)
+                            : const Color.fromARGB(255, 94, 138, 233),
+                      ),
                       child: Center(
-                        
                         child: Text(
                           ((data['questionIndex'] as int) + 1).toString(),
-                          style: TextStyle(fontWeight: FontWeight.bold, ),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       )),
                   Expanded(
-                    
                     child: Container(
                       padding: EdgeInsets.only(left: 20, right: 20),
-                      alignment: Alignment.topLeft,
+                      //alignment: Alignment.topLeft,
+                      
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             data['question'] as String,

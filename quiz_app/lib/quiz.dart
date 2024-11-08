@@ -23,7 +23,13 @@ class _QuizState extends State<Quiz> {
     activestate = MainScreen(switchactive);
     super.initState();
   }
-
+  
+  void restartIt(){
+    setState(() {
+      selectAnswer=[];
+      activestate = QuizTest(onSelectAnswer: chooseAnswer,);
+    });
+  }
   void chooseAnswer(String answer)
   {
     selectAnswer.add(answer);
@@ -31,7 +37,8 @@ class _QuizState extends State<Quiz> {
     if(selectAnswer.length == questions.length){
       setState(() {
         // selectAnswer=[];
-        activestate = result_screen(choosenAnswer: selectAnswer,);
+        activestate = result_screen(choosenAnswer: selectAnswer,restartIt: restartIt);
+        
       });
     }
   }
@@ -41,6 +48,8 @@ class _QuizState extends State<Quiz> {
       activestate = QuizTest(onSelectAnswer: chooseAnswer,);
     }); 
   } 
+
+  
 
   
 
